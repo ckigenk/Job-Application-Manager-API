@@ -4,7 +4,8 @@ const app = express()
 const connectDB = require('./db/connect')
 require('dotenv').config()
 const jobs = require('./routes/jobs')
-
+const notFound=require('./middleware/not-found')
+const errorHandler=require('./middleware/errorHandler')
 app.get('/', (req, res) => {
   res.send('Welcome to Jobs Application Manager')
 })
@@ -14,7 +15,8 @@ app.use(express.json())
 
 // routes
 app.use('/api/v1/jobs', jobs)
-
+app.use(notFound)
+app.use(errorHandler)
 const PORT = 5000
 // connect db then start server
 const start = async () => {
