@@ -16,6 +16,11 @@ const jobsSchema = new mongoose.Schema({
  link:{
   type:String,
   required:false
+ },
+ applied:{
+  type:Boolean,
+  required:true,
+  default:false
  }
 })
 

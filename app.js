@@ -8,6 +8,8 @@ app.get('/', (req, res) => {
   res.send('Welcome to Jobs Application Manager')
 })
 
+app.use(express.json())
+
 app.use('/api/v1/jobs', jobs)
 
 const PORT = 5000
