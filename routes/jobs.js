@@ -5,3 +5,4 @@ const {getAllJobs, createJob, getSingleJob, updateJob, deleteJob} = require('../
 router.route('/').get(getAllJobs).post(createJob)
 router.route('/:id').get(getSingleJob).patch(updateJob).delete(deleteJob)
 
+module.exports=router
