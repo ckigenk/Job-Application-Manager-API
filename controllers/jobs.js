@@ -1,3 +1,5 @@
+const Jobs=require('../models/jobs')
+
 const getAllJobs=(req, res)=>res.send('All jobs')
 const createJob=(req, res)=>res.send('Job created')
 const getSingleJob=(req, res)=>{
